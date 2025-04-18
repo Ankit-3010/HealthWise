@@ -4,9 +4,10 @@ import { useAuth } from './context/AuthContext'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
-//import History from './pages/History'
-//import NotFound from './pages/NotFound'
-import Layout from './component/Layout'
+import History from './pages/History'
+import NotFound from './pages/NotFound'
+import Layout from './components/Layout'
+import Hero from './pages/HomePage'
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth()
@@ -28,7 +29,7 @@ const ProtectedRoute = ({ children }) => {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+      <Route path="/" element={<Hero/>} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       
@@ -39,7 +40,7 @@ function App() {
           </Layout>
         </ProtectedRoute>
       } />
-      {/*
+      
       <Route path="/history" element={
         <ProtectedRoute>
           <Layout>
@@ -48,7 +49,7 @@ function App() {
         </ProtectedRoute>
       } />
       
-      <Route path="*" element={<NotFound />} />*/}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

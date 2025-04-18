@@ -1,6 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import Header from './Header'
 
 const Layout = ({ children }) => {
   const { pathname } = useLocation()
@@ -16,8 +15,8 @@ const Layout = ({ children }) => {
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link to="/dashboard" className="flex items-center">
-            <span className="text-xl font-bold text-black">HealthWise</span>
+          <Link to="/" className="flex items-center">
+            <span className="text-xl font-bold">HealthWise</span>
           </Link>
           
           {user && (
